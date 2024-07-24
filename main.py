@@ -33,7 +33,7 @@ async def interact(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 message += f"id = {employee['id']}\nName = {employee['employee_name']}\nSalary = {employee['employee_salary']}\nAge = {employee['employee_age']}\n\n"
             message += "\n\n"
         else:
-            message = data["message"]
+            message += f"Error: {data["message"]}"
         
     except Exception as e:
         message = f"Error: {e}\nTry Again"
@@ -66,7 +66,7 @@ async def employee(update: Update, context: ContextTypes.DEFAULT_TYPE):
                             message = "Data Not Found"
                     message += "\n\n "
                 else:
-                    message += data["message"]
+                    message += f"Error: {data["message"]}"
                 
             except Exception as e:
                 message = f"Error: {e}\nTry Again"
@@ -78,7 +78,7 @@ async def employee(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
     
     
-    await context.bot.send_message(chat_id=update.effective_chat.id, text=message,reply_markup=reply_markup)
+    await context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 if __name__ == '__main__':
     application = ApplicationBuilder().token(token=token).build()
