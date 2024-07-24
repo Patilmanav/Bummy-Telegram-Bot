@@ -33,7 +33,7 @@ async def interact(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 message += f"id = {employee['id']}\nName = {employee['employee_name']}\nSalary = {employee['employee_salary']}\nAge = {employee['employee_age']}\n\n"
             message += "\n\n"
         else:
-            message += f"Error: {data["message"]}"
+            message += f"Error: {data['message']}"
         
     except Exception as e:
         message = f"Error: {e}\nTry Again"
@@ -66,7 +66,7 @@ async def employee(update: Update, context: ContextTypes.DEFAULT_TYPE):
                             message = "Data Not Found"
                     message += "\n\n "
                 else:
-                    message += f"Error: {data["message"]}"
+                    message += f"Error: {data['message']}"
                 
             except Exception as e:
                 message = f"Error: {e}\nTry Again"
